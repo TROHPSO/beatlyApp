@@ -1,10 +1,17 @@
 // pages/Result.js
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 
 const Result = () => {
   const { state } = useLocation();
   const { selectedGenres } = state || {};
+
+  const navigate = useNavigate(); // Correctement initialiser navigate
+
+
+  const handleBackToHome = () => {
+    navigate("/"); // Rediriger vers la page d'accueil (login)
+  };
 
   return (
     <div>
@@ -16,6 +23,12 @@ const Result = () => {
         ))}
       </ul>
       <h2>Votre taux de matching : 85%</h2> {/* Exemple de résultat */}
+
+        {/* Bouton pour revenir à l'accueil */}
+      <button onClick={handleBackToHome} style={{ marginTop: "20px" }}>
+        Retour à l'accueil
+      </button>
+      
     </div>
   );
 };

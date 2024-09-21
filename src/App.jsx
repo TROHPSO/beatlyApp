@@ -5,6 +5,8 @@ import SelectGenres from './pages/SelectGenres';
 import Splashscreen from './pages/splashscreen';
 import Result from './pages/Result';
 import Matching from './pages/Matching';
+import Profil from './pages/Profil';
+
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
 
         {/* Sélection des genres */}
         <Route path="/select-genres" element={<SelectGenres />} />
+
+        {/* Profil */}
+        <Route path="/profil" element={<Profil />} />
 
         {/* Matching */}
         <Route path="/matching" element={<Matching />} />
